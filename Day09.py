@@ -1,11 +1,8 @@
 def nextNumber(seq: list) -> list:
-	print(seq, set(seq))
 	if all(x == 0 for x in seq):
 		return [0, 0]
 	newSeq = [seq[i] - seq[i-1] for i in range(1, len(seq))]
-	print(newSeq)
 	prev, next = nextNumber(newSeq)
-	print("returning", [seq[0] - prev, seq[-1] + next])
 	return [seq[0] - prev, seq[-1] + next]
 
 
